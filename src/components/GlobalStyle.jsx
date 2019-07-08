@@ -20,6 +20,16 @@ const GlobalStyle = createGlobalStyle`
       --h1-font-size: 8rem;
       --h3-font-size: 1.4rem;
     }
+
+    @media all and (min-width: 1601px) {
+      --h1-font-size: 8rem;
+      --h3-font-size: 1.4rem;
+    }
+
+    @media all and (max-width: 1024px) and (max-height: 520px) {
+      --h1-font-size: 8vw;
+      --p-font-size: 1.13rem;
+    }
   }
 
   body {
