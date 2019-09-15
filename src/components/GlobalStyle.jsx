@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
     @media all and (min-width: 768px) {
       --h1-font-size: 6.5rem;
       --h2-font-size: 5vw;
-      --h3-font-size: 1.4rem;
+      --h3-font-size: 1.8rem;
     }
 
     @media all and (min-width: 1601px) {

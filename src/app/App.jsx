@@ -6,6 +6,7 @@ import Frame from "../components/Frame";
 import Home from "../pages/Home";
 import { Switch, Route } from "react-router";
 import NotFound from "../pages/NotFound";
+import Workout from "../pages/Workout";
 
 export default function App() {
   return (
@@ -14,12 +15,9 @@ export default function App() {
       <Layout>
         <Frame>
           <Switch>
-            <Route path="/" exact="true">
-              <Home />
-            </Route>
-            <Route path="*">
-              <NotFound />
-            </Route>
+            <Route path="/" exact component={Home} />
+            <Route path="/workout" component={Workout} />
+            <Route path="*" component={NotFound} />
           </Switch>
         </Frame>
       </Layout>

@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export { H1, H2, H3, H4, P, A };
 
-const commonStyling = `
+const commonStyling = css`
   margin: 0;
-  color: white
+  color: white;
 `;
 
 const H1 = styled.h1`
@@ -24,6 +24,7 @@ const H3 = styled.h3`
   ${commonStyling}
 
   font-size: var(--h3-font-size);
+  text-decoration: underline;
 `;
 
 const H4 = styled.h3`
