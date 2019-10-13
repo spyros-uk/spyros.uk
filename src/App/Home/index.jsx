@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 
-import { H1, P } from "../components/Typography";
-import ContactInfo from "../components/ContactInfo";
+import { H1, P } from "../Typography"
+import ContactInfo from "../Widgets/ContactInfo"
 
 export default function Home() {
   return (
@@ -17,5 +17,5 @@ export default function Home() {
       </P>
       <ContactInfo />
     </>
-  );
+  )
 }

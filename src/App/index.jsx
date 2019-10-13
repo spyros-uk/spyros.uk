@@ -1,12 +1,13 @@
-import React from "react";
+import React from "react"
+import { Switch, Route } from "react-router"
 
-import GlobalStyle from "../components/GlobalStyle";
-import Layout from "../components/Layout";
-import Frame from "../components/Frame";
-import Home from "../pages/Home";
-import { Switch, Route } from "react-router";
-import NotFound from "../pages/NotFound";
-import Workout from "../pages/Workout";
+import GlobalStyle from "./GlobalStyle"
+import Layout from "./Widgets/Layout"
+import Frame from "./Widgets/Frame"
+
+import Home from "./Home"
+import NotFound from "./NotFound"
+import Workout from "./Workout"
 
 export default function App() {
   return (
@@ -22,5 +23,5 @@ export default function App() {
         </Frame>
       </Layout>
     </>
-  );
+  )
 }
