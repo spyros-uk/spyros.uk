@@ -1,8 +1,8 @@
 {
-  "name": "spyrosuk",
+  "name": "spyros.uk",
   "version": "1.0.0",
-  "description": "Personal Website",
-  "keywords": [],
+  "description": "Spyros Papaioannou - Personal Website",
+  "keywords": ["Spyros", "Spyros Papaioannou", "spyros.uk"],
   "main": "src/index.js",
   "baseUrl": "./src",
   "dependencies": {
@@ -22,10 +22,5 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
 }
