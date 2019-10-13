@@ -1,5 +1,5 @@
 import React from "react"
-import { H1 } from "../Typography"
+import { H1 } from "../Widgets/Typography"
 
 export default function NotFound() {
   return (

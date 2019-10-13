@@ -1,5 +1,5 @@
 import React from "react"
-import { A } from "../../Typography"
+import { A } from "../Typography"
 import ContactInfoList from "./ContactInfoList"
 import ContactInfoListItem from "./ContactInfoListItem"
 

@@ -1,6 +1,6 @@
 import React from "react"
 
-import { H1, P } from "../Typography"
+import { H1, P } from "../Widgets/Typography"
 import ContactInfo from "../Widgets/ContactInfo"
 import Frame from "../Widgets/Frame"
 import styled from "styled-components"
