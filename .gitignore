@@ -1,3 +1,8 @@
 node_modules/
 .parcel-cache/
 dist/
+<<<<<<< HEAD
+=======
+.DS_Store
+
+>>>>>>> edb7a94 (bootstrap)
