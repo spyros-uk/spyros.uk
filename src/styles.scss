@@ -8,7 +8,15 @@ body {
 }
 
 h1 {
-    
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+
+    margin-bottom: 3rem;
 }
 
 main {
@@ -22,22 +30,53 @@ main {
 }
 
 ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+    margin: 0;
+    padding: 0;
+
+    @media (max-width: 50rem) {
+        flex-direction: column;
+    }
 }
 
 li {
+    list-style: none;
+    
+    &:not(:last-child) {
+        margin-right: 3rem;
 
+        @media (max-width: 50rem) {
+            margin-right: 0;
+            margin-bottom: .7rem;
+        }
+    }
+    
 }
 
 a {
-
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    text-decoration: none;
+    color: inherit;
 }
 
 
 .frame {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+
     border: 10px solid black;
+    padding: 10vw;
+    
     width: 90vw;
     height: 90vh;
+    
+    box-sizing: border-box;
 }
 
 .container {
