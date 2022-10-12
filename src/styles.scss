@@ -2,9 +2,11 @@
     --font-family: 'Kanit', sans-serif;
 
     --h1-font-size: 5rem;
+    --p-font-size: 1.1rem;
 
    @media screen and (max-width: 50rem) {
         --h1-font-size: 3rem;
+        --p-font-size: 1rem;
     }
 }
 
@@ -24,9 +26,10 @@ h1 {
 p {
     font-family: var(--font-family);
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: var(--p-font-size);
 
     margin: 0;
+
 }
 
 main {
@@ -47,6 +50,10 @@ main {
 section {
     &:not(:last-child) {
         margin-bottom: 3rem;
+
+        @media (max-width: 50rem) {
+            margin-bottom: 1.7rem;
+        }
     }
 }
 
@@ -78,6 +85,9 @@ li {
 }
 
 a {
+    display: block;
+    min-width: 80px;
+
     position: relative;
     font-family: var(--font-family);
     font-weight: 900;
