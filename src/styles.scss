@@ -1,5 +1,11 @@
 :root {
-   
+    --font-family: 'Kanit', sans-serif;
+
+    --h1-font-size: 5rem;
+
+   @media screen and (max-width: 50rem) {
+        --h1-font-size: 3rem;
+    }
 }
 
 html,
@@ -8,15 +14,19 @@ body {
 }
 
 h1 {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font-family);
     font-weight: 900;
+    font-size: var(--h1-font-size);
+
+    margin: 0;
 }
 
 p {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 1.1rem;
 
-    margin-bottom: 3rem;
+    margin: 0;
 }
 
 main {
@@ -25,8 +35,19 @@ main {
     align-items: center;
     justify-content: center;
 
+    border: 2vw solid black;
+    padding: 10vw;
     width: 100vw;
     min-height: 100vh;
+
+    box-shadow: inset 0px 0px 25px 7px #000000;
+    box-sizing: border-box;
+}
+
+section {
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
 }
 
 ul {
@@ -57,10 +78,31 @@ li {
 }
 
 a {
-    font-family: 'Roboto', sans-serif;
+    position: relative;
+    font-family: var(--font-family);
     font-weight: 900;
+    font-style: italic;
     text-decoration: none;
     color: inherit;
+
+    cursor: pointer;
+
+    &:hover::after {
+        transform: scaleX(1);
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        transform: scaleX(0);
+
+        background-color: black;
+        transition: transform .3s ease;
+    }
 }
 
 
@@ -70,13 +112,30 @@ a {
     align-content: center;
     justify-content: center;
 
+    position: relative;
     border: 10px solid black;
+    border-radius: .5rem;
     padding: 10vw;
     
     width: 90vw;
     height: 90vh;
     
     box-sizing: border-box;
+    box-shadow: inset 0px 0px 13px 2px #000000;
+    
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: .5rem;
+        width: 100%;
+        height: 100%;
+
+        box-shadow: 0 0 16px 10px #000;
+
+        z-index: -1;
+    }
 }
 
 .container {
