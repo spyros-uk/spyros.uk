@@ -2,12 +2,6 @@
   "name": "spyros.uk",
   "version": "1.0.0",
   "description": "My professional bio!",
-  "source": "src/index.html",
-  "scripts": {
-    "start": "npm run clean:dist && parcel",
-    "build": "npm run clean:dist && parcel build",
-    "clean:dist": "rm -rf dist"
-  },
   "keywords": [
     "Spyros",
     "Spyros",
@@ -17,10 +11,18 @@
   ],
   "author": "Spyros Papaioannou",
   "license": "ISC",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "npm run clean:dist && parcel",
+    "build": "npm run clean:dist && parcel build",
+    "cp:robots": "cp src/assets/robot",
+    "clean:dist": "rm -rf dist"
+  },
   "devDependencies": {
     "@parcel/packager-raw-url": "^2.7.0",
     "@parcel/transformer-jsonld": "^2.7.0",
     "@parcel/transformer-sass": "^2.7.0",
-    "parcel": "^2.7.0"
+    "parcel": "^2.7.0",
+    "parcel-reporter-static-files-copy": "^1.4.0"
   }
 }
