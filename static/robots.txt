@@ -1,5 +1,1 @@
 user-agent: *
-disallow: /assets/
-
-user-agent: magicsearchbot
-disallow: /assets/
