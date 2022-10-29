@@ -1,0 +1,8 @@
+{
+  "development": {
+    "domain": "staging.spyros.uk"
+  },
+  "production": {
+    "domain": "spyros.uk"
+  }
+}

@@ -1,12 +1,20 @@
 
 resource "aws_s3_bucket" "spyros_uk_s3" {
-  bucket = "staging.spyros.uk"
+  bucket = local.config[var.environment].domain
 
   tags = {
-    Name        = "staging.spyros.uk"
-    Environment = "Dev"
+    Name        = local.config[var.environment].domain
+    Environment = var.environment
   }
+}
 
+resource "aws_s3_bucket" "www_spyros_uk_s3" {
+  bucket = "www.${local.config[var.environment].domain}"
+
+  tags = {
+    Name        = "www.${local.config[var.environment].domain}"
+    Environment = var.environment
+  }
 }
 
 resource "aws_s3_bucket_website_configuration" "spyros_uk_s3_config" {
