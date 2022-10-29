@@ -1,3 +1,11 @@
+variable "environment" {
+  type = string
+}
+
+locals {
+  config = jsondecode(file("${path.module}/config/config.json"))
+}
+
 terraform {
   required_providers {
     aws = {
