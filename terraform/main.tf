@@ -2,6 +2,15 @@ variable "environment" {
   type = string
 }
 
+variable "AWS_ACCESS_KEY_ID" {
+  type = string
+}
+
+
+variable "AWS_SECRET_KEY" {
+  type = string
+}
+
 locals {
   config = jsondecode(file("${path.module}/config/config.json"))
 }
@@ -18,6 +27,8 @@ terraform {
 }
 
 provider "aws" {
-  profile = "spyros-uk"
   region  = "us-west-2"
+  # profile = "spyros-uk"
+  access_key = var.AWS_ACCESS_KEY_ID
+  secret_key = var.AWS_SECRET_KEY
 }

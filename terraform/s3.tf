@@ -8,15 +8,6 @@ resource "aws_s3_bucket" "spyros_uk_s3" {
   }
 }
 
-resource "aws_s3_bucket" "www_spyros_uk_s3" {
-  bucket = "www.${local.config[var.environment].domain}"
-
-  tags = {
-    Name        = "www.${local.config[var.environment].domain}"
-    Environment = var.environment
-  }
-}
-
 resource "aws_s3_bucket_website_configuration" "spyros_uk_s3_config" {
   bucket = aws_s3_bucket.spyros_uk_s3.bucket
 
@@ -62,4 +53,23 @@ resource "aws_s3_bucket_policy" "spyros_uk_s3_policy" {
       },
     ]
   })
+}
+
+resource "aws_s3_bucket" "www_spyros_uk_s3" {
+  bucket = "www.${local.config[var.environment].domain}"
+
+  tags = {
+    Name        = "www.${local.config[var.environment].domain}"
+    Environment = var.environment
+  }
+
+}
+
+resource "aws_s3_bucket_website_configuration" "www_spyros_uk_s3_config" {
+  bucket = aws_s3_bucket.www_spyros_uk_s3.bucket
+
+  redirect_all_requests_to {
+    host_name = aws_s3_bucket.spyros_uk_s3.bucket
+    protocol = "http"
+  }
 }
