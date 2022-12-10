@@ -20,11 +20,11 @@ jobs:
           - name: Git checkout
             uses: actions/checkout@v3
 
-          # - name: Install dependencies
-          #   run: npm ci
+          - name: Install dependencies
+            run: npm ci
 
-          # - name: Build
-          #   run: npm run build
+          - name: Build
+            run: npm run build
 
           - name: Configure AWS credentials
             uses: aws-actions/configure-aws-credentials@v1
@@ -61,3 +61,6 @@ jobs:
               export TF_VAR_environment=${{ inputs.environment }};
               terraform apply -auto-approve
             working-directory: ${{ env.TF_WORKING_DIR }}
+
+          - name: Publish artifacts
+            run: aws s3 sync dist/ s3://staging.spyros.uk/
