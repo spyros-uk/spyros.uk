@@ -35,11 +35,6 @@ jobs:
                 aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
                 aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
 
-          - name: Echo environment variables
-            run: |
-              echo ${{ env.TF_WORKING_DIR }}
-              echo ${{ env.TF_VAR_environment }}
-
           - name: Terraform setup
             uses: hashicorp/setup-terraform@v2
             with:
