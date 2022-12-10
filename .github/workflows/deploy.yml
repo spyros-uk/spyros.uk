@@ -10,10 +10,9 @@ on:
 
 jobs:
     deploy:
-    timeout-minutes: 10
       name: deploy website
       runs-on: ubuntu-latest
-      timeout-minutes: 4
+      timeout-minutes: 10
       steps:
           - name: Set environment variables
             run: |
