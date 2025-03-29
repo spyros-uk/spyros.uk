@@ -1,40 +1,43 @@
-# This is a basic workflow to help you get started with Actions
-name: AWS
+name: AWS Deployment
 
-# Controls when the action will run. Invokes the workflow on push events but only for the main branch
 on:
   workflow_dispatch:
     inputs:
-      aws_account_id:
-        description: 'AWS Account ID'
+      environment:
+        description: 'Select the deployment environment'
         required: true
-        default: '541194705160'
+        default: 'dev'
+        type: choice
+        options:
+          - dev
+          - test
+          - prod
       region:
         description: 'AWS Region'
         required: true
         default: 'eu-west-2'
 
-# Permission can be added at job level or workflow level    
 permissions:
-      id-token: write   # This is required for requesting the JWT
-      contents: read    # This is required for actions/checkout
+  id-token: write
+  contents: read
+
 jobs:
-  AssumeRoleAndCallIdentity:
+  deploy:
     runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+
     steps:
-      - name: Git clone the repository
+      - name: Checkout Repository
         uses: actions/checkout@v3
-      - name: configure aws credentials
-        uses: aws-actions/configure-aws-credentials@v1.7.0
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: arn:aws:iam::${{ inputs.aws_account_id }}:role/WebIdentityEngineeringDev
-          role-session-name: GitHub_to_AWS_via_FederatedOIDC
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/${{ secrets.AWS_ROLE_NAME }}
           aws-region: ${{ inputs.region }}
-      # Hello from AWS: WhoAmI
-      - name: Sts GetCallerIdentity
-        run: |
-          aws sts get-caller-identity
-      # List S3 Buckets
+
+      - name: Verify AWS Identity
+        run: aws sts get-caller-identity
+
       - name: List S3 Buckets
-        run: |
-          aws s3 ls
+        run: aws s3 ls
