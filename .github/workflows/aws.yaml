@@ -27,7 +27,7 @@ jobs:
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v1.7.0
         with:
-          role-to-assume: arn:aws:iam::${{ inputs.aws_account_id }}:role/Engineering_Dev_Web_Identity
+          role-to-assume: arn:aws:iam::${{ inputs.aws_account_id }}:role/WebIdentityEngineeringDev
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
           aws-region: ${{ inputs.region }}
       # Hello from AWS: WhoAmI
