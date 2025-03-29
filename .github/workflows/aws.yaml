@@ -17,6 +17,8 @@ on:
         required: true
         default: "eu-west-2"
 
+run-name: 'AWS Deployment - ${{ github.event.inputs.environment}}'
+
 permissions:
   id-token: write
   contents: read
@@ -42,6 +44,3 @@ jobs:
 
       - name: Verify AWS Identity
         run: aws sts get-caller-identity
-
-      - name: List S3 Buckets
-        run: aws s3 ls
